@@ -101,4 +101,4 @@ TodoList/
    - Observa la distribución de prioridades
 
 ## 👤 Autor
-- **SatruxDev**
+- Pedro Pinteño ---> **SatruxDev**
