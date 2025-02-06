@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Tareas - SatruxDev</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <div class="todo-app">
+            <header class="app-header">
+                <h1><i class="fas fa-check-double"></i> Lista de Tareas</h1>
+                <div class="theme-toggle">
+                    <i class="fas fa-moon"></i>
+                </div>
+            </header>
+
+            <div class="add-task">
+                <form id="taskForm">
+                    <input type="text" id="taskInput" placeholder="Añade una nueva tarea..." required>
+                    <div class="task-options">
+                        <select id="taskPriority">
+                            <option value="baja">Baja Prioridad</option>
+                            <option value="media">Media Prioridad</option>
+                            <option value="alta">Alta Prioridad</option>
+                        </select>
+                        <input type="date" id="taskDate">
+                    </div>
+                    <button type="submit">
+                        <i class="fas fa-plus"></i>
+                    </button>
+                </form>
+            </div>
+
+            <div class="filters">
+                <button class="filter-btn active" data-filter="all">Todas</button>
+                <button class="filter-btn" data-filter="active">Activas</button>
+                <button class="filter-btn" data-filter="completed">Completadas</button>
+            </div>
+
+            <div class="tasks-container">
+                <div id="tasksList" class="tasks-list">
+                    <!-- Las tareas se agregarán aquí dinámicamente -->
+                </div>
+
+                <div class="tasks-summary">
+                    <span id="tasksCount">0 tareas pendientes</span>
+                    <button id="clearCompleted">Limpiar Completadas</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="task-stats">
+            <h2>Estadísticas</h2>
+            <div class="stats-container">
+                <div class="stat-item">
+                    <i class="fas fa-tasks"></i>
+                    <div class="stat-info">
+                        <span id="totalTasks">0</span>
+                        <p>Total Tareas</p>
+                    </div>
+                </div>
+                <div class="stat-item">
+                    <i class="fas fa-check-circle"></i>
+                    <div class="stat-info">
+                        <span id="completedTasks">0</span>
+                        <p>Completadas</p>
+                    </div>
+                </div>
+                <div class="stat-item">
+                    <i class="fas fa-clock"></i>
+                    <div class="stat-info">
+                        <span id="pendingTasks">0</span>
+                        <p>Pendientes</p>
+                    </div>
+                </div>
+            </div>
+            <div class="priority-stats">
+                <h3>Por Prioridad</h3>
+                <div class="priority-bars">
+                    <div class="priority-bar">
+                        <span>Alta</span>
+                        <div class="bar-container">
+                            <div id="highPriorityBar" class="bar high" style="width: 0%"></div>
+                        </div>
+                        <span id="highPriorityCount">0</span>
+                    </div>
+                    <div class="priority-bar">
+                        <span>Media</span>
+                        <div class="bar-container">
+                            <div id="mediumPriorityBar" class="bar medium" style="width: 0%"></div>
+                        </div>
+                        <span id="mediumPriorityCount">0</span>
+                    </div>
+                    <div class="priority-bar">
+                        <span>Baja</span>
+                        <div class="bar-container">
+                            <div id="lowPriorityBar" class="bar low" style="width: 0%"></div>
+                        </div>
+                        <span id="lowPriorityCount">0</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/app.js"></script>
+</body>
+</html>
